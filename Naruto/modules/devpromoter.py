@@ -8,10 +8,10 @@ from telegram import Bot, Update, ParseMode, TelegramError
 from telegram.ext import CommandHandler, run_async
 from telegram.utils.helpers import mention_html
 
-from tg_bot import dispatcher, WHITELIST_USERS, SUPPORT_USERS, SUDO_USERS, DEV_USERS, OWNER_ID
-from tg_bot.modules.helper_funcs.chat_status import whitelist_plus, dev_plus
-from tg_bot.modules.helper_funcs.extraction import extract_user
-from tg_bot.modules.log_channel import gloggable
+from Naruto import dispatcher, WHITELIST_USERS, SUPPORT_USERS, SUDO_USERS, DEV_USERS, OWNER_ID
+from Naruto.modules.helper_funcs.chat_status import whitelist_plus, dev_plus
+from Naruto.modules.helper_funcs.extraction import extract_user
+from Naruto.modules.log_channel import gloggable
 
 ELEVATED_USERS_FILE = os.path.join(os.getcwd(), 'tg_bot/elevated_users.json')
 
@@ -69,7 +69,7 @@ def addsudo(bot: Bot, update: Update, args: List[str]) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + "\nSuccessfully added this user {} to sudo!".format(user_member.first_name))
+        rt + "\n\ᴋʀʟɪʏᴀᴀ {} ʙʜᴀɪʏᴀ ᴋᴏ sᴜᴅᴏ ᴍ ᴀᴅᴅ..!".format(user_member.first_name))
 
     log_message = (f"#SUDO\n"
                    f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
