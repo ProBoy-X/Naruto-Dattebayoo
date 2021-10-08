@@ -10,13 +10,13 @@ from telegram.ext import CommandHandler, Filters
 from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from tg_bot import dispatcher, TOKEN
-from tg_bot.modules.disable import DisableAbleCommandHandler
-from tg_bot.modules.helper_funcs.chat_status import bot_admin, can_promote, user_admin, can_pin, connection_status
-from tg_bot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from tg_bot.modules.log_channel import loggable
-from tg_bot.modules.connection import connected
-from tg_bot.modules.translations.strings import tld
+from Naruto import dispatcher, TOKEN
+from Naruto.modules.disable import DisableAbleCommandHandler
+from Naruto.modules.helper_funcs.chat_status import bot_admin, can_promote, user_admin, can_pin, connection_status
+from Naruto.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from Naruto.modules.log_channel import loggable
+from Naruto.modules.connection import connected
+from Naruto.modules.translations.strings import tld
 
 @run_async
 @bot_admin
@@ -35,22 +35,21 @@ def promote(bot: Bot, update: Update, args: List[str]) -> str:
             exit(1)
 
     if not chatD.get_member(bot.id).can_promote_members:
-        update.effective_message.reply_text("I can't promote/demote people here! "
-                                            "Make sure I'm admin and can appoint new admins.")
-        exit(1)
+        update.effective_message.reply_text("ᴀʀᴇ ᴍᴏʀɪɪ ᴍᴀɪʏᴀᴀ..🥲\n ᴀᴅᴍɪɴ ʀɪɢʜᴛ ᴛᴏ ᴅᴇᴅᴏ..ᴛᴀʙʜᴏ ᴛᴏ ᴋɪsɪ ᴏʀ ᴋᴏ ᴀᴅᴍɪɴ ʙᴀɴᴀᴜɴɢᴀ..🥲 ")
+         exit(1)
 
     user_id = extract_user(message, args)
     if not user_id:
-        message.reply_text(tld(chat.id, "You don't seem to be referring to a user."))
+        message.reply_text(tld(chat.id, "ʙʜᴀɪʏᴀ ᴜsᴇʀ ᴋᴏ ᴛᴀɢ ᴋʀᴋᴇ ʀᴇᴘʟʏ ᴋʀᴏ."))
         return ""
 
     user_member = chatD.get_member(user_id)
     if user_member.status == 'administrator' or user_member.status == 'creator':
-        message.reply_text(tld(chat.id, "How am I meant to promote someone that's already an admin?"))
+        message.reply_text(tld(chat.id, "ɴᴀsʜᴇ ᴋᴀᴍ ᴋᴀᴍ ᴋʀᴏ.. ᴀʟʀᴇᴀᴅʏ ᴀᴅᴍɪɴ ʜ ᴠᴏ..!"))
         return ""
 
     if user_id == bot.id:
-        message.reply_text(tld(chat.id, "I can't promote myself! Get an admin to do it for me."))
+        message.reply_text(tld(chat.id, "ᴋᴜᴄʜ ʙʜɪ.. ᴍᴛʟʙ ᴋᴜᴄʜ ʙʜɪ.?"))
         return ""
 
     # set same perms as bot - bot can't assign higher perms than itself!
@@ -66,9 +65,9 @@ def promote(bot: Bot, update: Update, args: List[str]) -> str:
                           can_pin_messages=bot_member.can_pin_messages,
                           can_promote_members=bot_member.can_promote_members)
 
-    message.reply_text(tld(chat.id, f"Successfully promoted {mention_html(user_member.user.id, user_member.user.first_name)} in {html.escape(chatD.title)}!"), parse_mode=ParseMode.HTML)
-    return f"<b>{html.escape(chatD.title)}:</b>" \
-            "\n#PROMOTED" \
+    message.reply_text(tld(chat.id, f"ᴋʀᴅɪʏᴀ ᴘʀᴏᴍᴏᴛᴇ {mention_html(user_member.user.id, user_member.user.first_name)} in {html.escape(chatD.title)}!"), parse_mode=ParseMode.HTML)
+    return f"<b>{html.escape(chatD.title)}:</b> ʙʜᴀɪʏᴀ ᴋᴏ.." \
+            "\nᴘᴀʀᴛʏʏʏʏ..🥳🍥🎂" \
            f"\n<b>Admin:</b> {mention_html(user.id, user.first_name)}" \
            f"\n<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
 
@@ -90,26 +89,25 @@ def demote(bot: Bot, update: Update, args: List[str]) -> str:
             exit(1)
 
     if not chatD.get_member(bot.id).can_promote_members:
-        update.effective_message.reply_text("I can't promote/demote people here! "
-                                            "Make sure I'm admin and can appoint new admins.")
+        update.effective_message.reply_text("ᴀʀᴇ ᴍᴏʀɪɪ ᴍᴀɪʏᴀᴀ..🥲\n ᴀᴅᴍɪɴ ʀɪɢʜᴛ ᴛᴏ ᴅᴇᴅᴏ..ᴛᴀʙʜᴏ ᴛᴏ ᴋɪsɪ ᴏʀ ᴋᴏ ᴀᴅᴍɪɴ ʙᴀɴᴀᴜɴɢᴀ..🥲")
         exit(1)
 
     user_id = extract_user(message, args)
     if not user_id:
-        message.reply_text(tld(chat.id, "You don't seem to be referring to a user."))
+        message.reply_text(tld(chat.id, "ʙʜᴀɪʏᴀ ᴜsᴇʀ ᴋᴏ ᴛᴀɢ ᴋʀᴋᴇ ʀᴇᴘʟʏ ᴋʀᴏ."))
         return ""
 
     user_member = chatD.get_member(user_id)
     if user_member.status == 'creator':
-        message.reply_text(tld(chat.id, "This person CREATED the chat, how would I demote them?"))
+        message.reply_text(tld(chat.id, "ᴋᴜᴄʜ ʙʜɪ.. ᴍᴛʟʙ ᴋᴜᴄʜ ʙʜɪ.?"))
         return ""
 
     if not user_member.status == 'administrator':
-        message.reply_text(tld(chat.id, "Can't demote what wasn't promoted!"))
+        message.reply_text(tld(chat.id, "ᴋᴜᴄʜ ʙʜɪ.. ᴍᴛʟʙ ᴋᴜᴄʜ ʙʜɪ.?"))
         return ""
 
     if user_id == bot.id:
-        message.reply_text(tld(chat.id, "I can't demote myself!"))
+        message.reply_text(tld(chat.id, "ᴋᴜᴄʜ ʙʜɪ.. ᴍᴛʟʙ ᴋᴜᴄʜ ʙʜɪ.?"))
         return ""
 
     try:
@@ -122,9 +120,8 @@ def demote(bot: Bot, update: Update, args: List[str]) -> str:
                               can_restrict_members=False,
                               can_pin_messages=False,
                               can_promote_members=False)
-        message.reply_text(tld(chat.id, f"Successfully demoted in *{chatD.title}*!"), parse_mode=ParseMode.MARKDOWN)
-        return f"<b>{html.escape(chatD.title)}:</b>" \
-                "\n#DEMOTED" \
+        message.reply_text(tld(chat.id, f"ᴅᴇᴍᴏᴛᴇ ʜᴏɢʏᴇ in *{chatD.title}*!"), parse_mode=ParseMode.MARKDOWN)
+        return f"<b>{html.escape(chatD.title)}:</b> ʙʜᴀɪʏᴀ.." 
                f"\n<b>Admin:</b> {mention_html(user.id, user.first_name)}" \
                f"\n<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
 
@@ -163,7 +160,7 @@ def pin(bot: Bot, update: Update, args: List[str]) -> str:
             else:
                 raise
         return "<b>{}:</b>" \
-               "\n#PINNED" \
+               "\nᴋʀᴅɪʏᴀ ᴠʀᴏ ᴘɪɴ.😉" \
                "\n<b>Admin:</b> {}".format(html.escape(chat.title), mention_html(user.id, user.first_name))
 
     return ""
@@ -187,7 +184,7 @@ def unpin(bot: Bot, update: Update) -> str:
             raise
 
     return "<b>{}:</b>" \
-           "\n#UNPINNED" \
+           "\nᴜɴᴘɪɴɴᴇᴅ ᴠᴍʀᴏᴏ..😉" \
            "\n<b>Admin:</b> {}".format(html.escape(chat.title),
                                        mention_html(user.id, user.first_name))
 
@@ -205,9 +202,9 @@ def invite(bot: Bot, update: Update):
             invitelink = bot.exportChatInviteLink(chat.id)
             update.effective_message.reply_text(invitelink)
         else:
-            update.effective_message.reply_text("I don't have access to the invite link, try changing my permissions!")
+            update.effective_message.reply_text("ᴘᴇʀᴍɪssɪᴏɴs ᴅᴇᴅᴏ sᴀᴀʀɪ..🥺")
     else:
-        update.effective_message.reply_text("I can only give you invite links for supergroups and channels, sorry!")
+        update.effective_message.reply_text("I can only give you invite links for supergroups and channels, sorry!🥺")
 
 @run_async
 @connection_status
@@ -225,7 +222,7 @@ def set_title(bot: Bot, update: Update, args: List[str]):
         return
 
     if not user_id:
-        message.reply_text("You don't seem to be referring to a user.")
+        message.reply_text("ʙʜᴀɪʏᴀ ᴜsᴇʀ ᴋᴏ ᴛᴀɢ ᴋʀᴋᴇ ʀᴇᴘʟʏ ᴋʀᴏ.")
         return
 
     if user_member.status == 'creator':
@@ -233,19 +230,19 @@ def set_title(bot: Bot, update: Update, args: List[str]):
         return
 
     if not user_member.status == 'administrator':
-        message.reply_text("Can't set title for non-admins!\nPromote them first to set custom title!")
+        message.reply_text("ᴋᴜᴄʜ ʙʜɪ.. ᴍᴛʟʙ ᴋᴜᴄʜ ʙʜɪ.?")
         return
 
     if user_id == bot.id:
-        message.reply_text("I can't set my own title myself! Get the one who made me admin to do it for me.")
+        message.reply_text("ᴋᴜᴄʜ ʙʜɪ.. ᴍᴛʟʙ ᴋᴜᴄʜ ʙʜɪ.?")
         return
 
     if not title:
-        message.reply_text("Setting blank title doesn't do anything!")
+        message.reply_text("ᴛɪᴛʟᴇ ᴅᴇᴅᴏ ᴋᴜᴄʜ ʙʟᴀɴᴋ ᴀᴄᴄʜᴀ ɴɪ ʟɢᴛᴀ..")
         return
 
     if len(title) > 16:
-        message.reply_text("The title length is longer than 16 characters.\nTruncating it to 16 characters.")
+        message.reply_text("ᴛɪᴛʟᴇ 16 ᴅɪɢɪᴛs ᴋᴀ ʜᴏɴᴀ ᴄʜᴀʜɪʏᴇ ᴏʀ ᴇᴍᴏᴊɪs ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ.❌")
 
     result = requests.post(f"https://api.telegram.org/bot{TOKEN}/setChatAdministratorCustomTitle"
                            f"?chat_id={chat.id}"
