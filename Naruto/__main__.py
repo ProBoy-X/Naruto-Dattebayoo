@@ -145,11 +145,11 @@ def start(bot: Bot, update: Update, args: List[str]):
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🦋 ʜᴇʟᴘ 🦋",
                                                                        callback_data="help_back".format(bot.username)),
                                                                                    InlineKeyboardButton(text="🍁 ᴍᴇʀᴇ ᴅᴇᴠᴛᴀᴀ 🍁",
-                                                                       url="t.me/teamishere")],
+                                                                       url="t.me/Its_JassManak")],
                                                                                    [InlineKeyboardButton(text="🎀 ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘs 🎀",
                                                                        url="t.me/{}?startgroup=true".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="🎁 sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ 🎁",
-                                                                       url="https://github.com/ProBoy-X/")
+                                                                                   InlineKeyboardButton(text="🎁 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ 🎁",
+                                                                       url="https://t.me/DatteBayooSupport")
                                                                                  ]]))
 
     else:
