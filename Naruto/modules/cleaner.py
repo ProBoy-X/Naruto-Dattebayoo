@@ -5,10 +5,10 @@ from typing import List
 from telegram import Bot, Update, ParseMode
 from telegram.ext import CommandHandler, MessageHandler, Filters, run_async
 
-from tg_bot import ALLOW_EXCL, dispatcher, CustomCommandHandler
-from tg_bot.modules.disable import DisableAbleCommandHandler
-from tg_bot.modules.helper_funcs.chat_status import user_admin, bot_can_delete, dev_plus, connection_status
-from tg_bot.modules.sql import cleaner_sql as sql
+from Naruto import ALLOW_EXCL, dispatcher, CustomCommandHandler
+from Naruto.modules.disable import DisableAbleCommandHandler
+from Naruto.modules.helper_funcs.chat_status import user_admin, bot_can_delete, dev_plus, connection_status
+from Naruto.modules.sql import cleaner_sql as sql
 
 if ALLOW_EXCL:
     CMD_STARTERS = ('/', '!')
