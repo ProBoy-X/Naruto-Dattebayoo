@@ -20,8 +20,8 @@ from contextlib import redirect_stdout
 from telegram import ParseMode
 from telegram.ext import CommandHandler, run_async
 
-from tg_bot import dispatcher, LOGGER
-from tg_bot.modules.helper_funcs.chat_status import dev_plus
+from Naruto import dispatcher, LOGGER
+from Naruto.modules.helper_funcs.chat_status import dev_plus
 
 namespaces = {}
 
