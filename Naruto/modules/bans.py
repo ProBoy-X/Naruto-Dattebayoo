@@ -6,13 +6,13 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-from tg_bot import dispatcher, LOGGER, DEV_USERS, SUDO_USERS, TIGER_USERS
-from tg_bot.modules.disable import DisableAbleCommandHandler
-from tg_bot.modules.helper_funcs.chat_status import (bot_admin, user_admin, is_user_ban_protected, can_restrict,
+from Naruto import dispatcher, LOGGER, DEV_USERS, SUDO_USERS, TIGER_USERS
+from Naruto.modules.disable import DisableAbleCommandHandler
+from Naruto.modules.helper_funcs.chat_status import (bot_admin, user_admin, is_user_ban_protected, can_restrict,
                                                      is_user_admin, is_user_in_chat, connection_status)
-from tg_bot.modules.helper_funcs.extraction import extract_user_and_text
-from tg_bot.modules.helper_funcs.string_handling import extract_time
-from tg_bot.modules.log_channel import loggable, gloggable
+from Naruto.modules.helper_funcs.extraction import extract_user_and_text
+from Naruto.modules.helper_funcs.string_handling import extract_time
+from Naruto.modules.log_channel import loggable, gloggable
 
 
 @run_async
@@ -30,25 +30,25 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("I doubt that's a user.")
+        message.reply_text("ɪᴅ ᴛʜᴇᴇᴋ ʜ ɴᴀ ᴠᴍʀᴏᴏ..👀.")
         return log_message
 
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
         if excp.message == "User not found":
-            message.reply_text("Can't seem to find this person.")
+            message.reply_text("ɴɪ ᴍɪʟᴀ ʏᴇ ᴄʜᴜᴛɪʏᴀ..☹️☹️")
             return log_message
         else:
             raise
 
     if user_id == bot.id:
-        message.reply_text("Oh yeah, ban myself, noob!")
+        message.reply_text("ᴡᴀᴀʜʜ ʙsᴅᴋ.!! ʟᴜɴᴅ ᴘʀɪᴢᴇ ᴍɪʟᴇɢᴀ ᴛᴜᴊʜᴇ ɪsᴋᴇ ʟɪʏᴇ.😂")
         return log_message
 
     # dev users to bypass whitelist protection incase of abuse
     if is_user_ban_protected(chat, user_id, member) and user not in DEV_USERS:
-        message.reply_text("This user has immunity - I can't ban them.")
+        message.reply_text("ᴀᴅᴍɪɴ ʜ ʏᴇ.. ɴɪ ᴋʀ sᴀᴋᴛᴀ ɪsᴇ ʙᴀɴ.☹️")
         return log_message
 
     log = (f"<b>{html.escape(chat.title)}:</b>\n"
@@ -68,13 +68,13 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
     except BadRequest as excp:
         if excp.message == "Reply message not found":
             # Do not reply
-            message.reply_text('Banned!', quote=False)
+            message.reply_text('ʟᴏᴅᴀ ʙᴀɴɴᴇᴅ.😁', quote=False)
             return log
         else:
             LOGGER.warning(update)
             LOGGER.exception("ERROR banning user %s in chat %s (%s) due to %s", user_id, chat.title, chat.id,
                              excp.message)
-            message.reply_text("Uhm...that didn't work...")
+            message.reply_text("sᴏʀʀʏ.. ʙᴀɴ ɴɪ ʜᴜᴀ ʏᴇ..😐 ")
 
     return log_message
 
@@ -94,28 +94,28 @@ def temp_ban(bot: Bot, update: Update, args: List[str]) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("I doubt that's a user.")
+        message.reply_text("ɪᴅ ᴛʜᴇᴇᴋ ʜ ɴᴀ ᴠᴍʀᴏᴏ..👀")
         return log_message
 
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
         if excp.message == "User not found":
-            message.reply_text("I can't seem to find this user.")
+            message.reply_text("ɴɪ ᴍɪʟᴀ ʏᴇ ᴄʜᴜᴛɪʏᴀ..☹️☹️")
             return log_message
         else:
             raise
 
     if user_id == bot.id:
-        message.reply_text("I'm not gonna BAN myself, are you crazy?")
+        message.reply_text("ᴡᴀᴀʜʜ ʙsᴅᴋ.!! ʟᴜɴᴅ ᴘʀɪᴢᴇ ᴍɪʟᴇɢᴀ ᴛᴜᴊʜᴇ ɪsᴋᴇ ʟɪʏᴇ.😂")
         return log_message
 
     if is_user_ban_protected(chat, user_id, member):
-        message.reply_text("I don't feel like it.")
+        message.reply_text("sᴏʀʀʏ..🥺")
         return log_message
 
     if not reason:
-        message.reply_text("You haven't specified a time to ban this user for!")
+        message.reply_text("ᴋᴀʙ ᴛᴀᴋ ʙᴀɴ ᴋʀɴᴀ ʜ ɪsᴇ.? ᴍᴛʟʙ ᴋɪᴛɴᴀ ᴛɪᴍᴇ , ᴅɪɴ.?")
         return log_message
 
     split_reason = reason.split(None, 1)
@@ -176,30 +176,30 @@ def punch(bot: Bot, update: Update, args: List[str]) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("I doubt that's a user.")
+        message.reply_text("ɪᴅ ᴛʜᴇᴇᴋ ʜ ɴᴀ ᴠᴍʀᴏᴏ..👀.")
         return log_message
 
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
         if excp.message == "User not found":
-            message.reply_text("I can't seem to find this user.")
+            message.reply_text("ɴɪ ᴍɪʟᴀ ʏᴇ ᴄʜᴜᴛɪʏᴀ..☹️☹️")
             return log_message
         else:
             raise
 
     if user_id == bot.id:
-        message.reply_text("Yeahhh I'm not gonna do that.")
+        message.reply_text("sᴏʀʀʏ..🥺")
         return log_message
 
     if is_user_ban_protected(chat, user_id):
-        message.reply_text("I really wish I could punch this user....")
+        message.reply_text("ᴡᴀᴀʜʜ ʙsᴅᴋ.!! ʟᴜɴᴅ ᴘʀɪᴢᴇ ᴍɪʟᴇɢᴀ ᴛᴜᴊʜᴇ ɪsᴋᴇ ʟɪʏᴇ.😂")
         return log_message
 
     res = chat.unban_member(user_id)  # unban on current user = kick
     if res:
         # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
-        bot.sendMessage(chat.id, f"One Punched! {mention_html(member.user.id, member.user.first_name)}.",
+        bot.sendMessage(chat.id, f"ʟᴇ ʙsᴅᴋ!! {mention_html(member.user.id, member.user.first_name)}.",
                         parse_mode=ParseMode.HTML)
         log = (f"<b>{html.escape(chat.title)}:</b>\n"
                f"#KICKED\n"
@@ -211,7 +211,7 @@ def punch(bot: Bot, update: Update, args: List[str]) -> str:
         return log
 
     else:
-        message.reply_text("Well damn, I can't punch that user.")
+        message.reply_text("sᴏʀʀʏ..🥺 ɴɪ ᴋʀ sᴀᴋᴛᴀ ɪsᴇ ᴋɪᴄᴋ..")
 
     return log_message
 
@@ -222,7 +222,7 @@ def punch(bot: Bot, update: Update, args: List[str]) -> str:
 def punchme(bot: Bot, update: Update):
     user_id = update.effective_message.from_user.id
     if is_user_admin(update.effective_chat, user_id):
-        update.effective_message.reply_text("I wish I could... but you're an admin.")
+        update.effective_message.reply_text("ᴊʏᴀᴅᴀ ɢᴀɴᴅ ᴍᴛ ғᴜʟᴀ ʙsᴅᴋ ᴀᴅᴍɪɴ ʜ ᴛᴏ..😒")
         return
 
     res = update.effective_chat.unban_member(user_id)  # unban on current user = kick
@@ -247,28 +247,28 @@ def unban(bot: Bot, update: Update, args: List[str]) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("I doubt that's a user.")
+        message.reply_text("ɪᴅ ᴛʜᴇᴇᴋ ʜ ɴᴀ ᴠᴍʀᴏᴏ..👀.")
         return log_message
 
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
         if excp.message == "User not found":
-            message.reply_text("I can't seem to find this user.")
+            message.reply_text("ɴɪ ᴍɪʟᴀ ʏᴇ ᴄʜᴜᴛɪʏᴀ..☹️☹️")
             return log_message
         else:
             raise
 
     if user_id == bot.id:
-        message.reply_text("How would I unban myself if I wasn't here...?")
+        message.reply_text("ᴡᴀᴀʜʜ ʙsᴅᴋ.!! ʟᴜɴᴅ ᴘʀɪᴢᴇ ᴍɪʟᴇɢᴀ ᴛᴜᴊʜᴇ ɪsᴋᴇ ʟɪʏᴇ.😂")
         return log_message
 
     if is_user_in_chat(chat, user_id):
-        message.reply_text("Isn't this person already here??")
+        message.reply_text("ʙᴀɴᴅᴀ ʙʜᴀɢ ɢᴀʏᴀ ɢʀᴏᴜᴘ sᴇ..😂")
         return log_message
 
     chat.unban_member(user_id)
-    message.reply_text("Yep, this user can join!")
+    message.reply_text("ʙᴜʟᴀ ʟᴏ ɪssᴇ ᴠᴀᴘɪs..🤓")
 
     log = (f"<b>{html.escape(chat.title)}:</b>\n"
            f"#UNBANNED\n"
@@ -304,7 +304,7 @@ def selfunban(bot: Bot, update: Update, args: List[str]) -> str:
         member = chat.get_member(user.id)
     except BadRequest as excp:
         if excp.message == "User not found":
-            message.reply_text("I can't seem to find this user.")
+            message.reply_text("ɴɪ ᴍɪʟᴀ ʏᴇ ᴄʜᴜᴛɪʏᴀ..☹️☹️")
             return
         else:
             raise
