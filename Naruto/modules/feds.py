@@ -14,16 +14,16 @@ from telegram import ParseMode, Update, Bot, Chat, User, MessageEntity, InlineKe
 from telegram.ext import run_async, CommandHandler, MessageHandler, Filters, CallbackQueryHandler
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
-from tg_bot import dispatcher, OWNER_ID, SUDO_USERS, WHITELIST_USERS, MESSAGE_DUMP, LOGGER
-from tg_bot.modules.helper_funcs.handlers import CMD_STARTERS
-from tg_bot.modules.helper_funcs.misc import is_module_loaded, send_to_list
-from tg_bot.modules.helper_funcs.chat_status import is_user_admin
-from tg_bot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from tg_bot.modules.helper_funcs.string_handling import markdown_parser
-from tg_bot.modules.disable import DisableAbleCommandHandler
+from Naruto import dispatcher, OWNER_ID, SUDO_USERS, WHITELIST_USERS, MESSAGE_DUMP, LOGGER
+from Naruto.modules.helper_funcs.handlers import CMD_STARTERS
+from Naruto.modules.helper_funcs.misc import is_module_loaded, send_to_list
+from Naruto.modules.helper_funcs.chat_status import is_user_admin
+from Naruto.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from Naruto.modules.helper_funcs.string_handling import markdown_parser
+from Naruto.modules.disable import DisableAbleCommandHandler
 
-import tg_bot.modules.sql.feds_sql as sql
-from tg_bot.modules.helper_funcs.alternate import send_message
+import Naruto.modules.sql.feds_sql as sql
+from Naruto.modules.helper_funcs.alternate import send_message
 # Hello bot owner, I spent for feds many hours of my life. Please don't remove this if you still respect MrYacha and peaktogoo and AyraHikari too.
 # Federation by MrYacha 2018-2019
 # Federation rework by Mizukito Akito 2019
