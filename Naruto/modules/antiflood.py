@@ -6,10 +6,10 @@ from telegram.error import BadRequest
 from telegram.ext import MessageHandler, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-from tg_bot import dispatcher, WHITELIST_USERS, TIGER_USERS
-from tg_bot.modules.helper_funcs.chat_status import is_user_admin, user_admin, can_restrict, connection_status
-from tg_bot.modules.log_channel import loggable
-from tg_bot.modules.sql import antiflood_sql as sql
+from Naruto import dispatcher, WHITELIST_USERS, TIGER_USERS
+from Naruto.modules.helper_funcs.chat_status import is_user_admin, user_admin, can_restrict, connection_status
+from Naruto.modules.log_channel import loggable
+from Naruto.modules.sql import antiflood_sql as sql
 
 FLOOD_GROUP = 3
 
@@ -38,20 +38,18 @@ def check_flood(bot: Bot, update: Update) -> str:
 
     try:
         bot.restrict_chat_member(chat.id, user.id, can_send_messages=False)
-        msg.reply_text(f"*mutes {mention_html(user.id, user.first_name)} permanently*\nStop flooding the group!", parse_mode=ParseMode.HTML)
+        msg.reply_text(f"*ᴍᴜᴛᴇs {mention_html(user.id, user.first_name)} ᴘᴇʀᴍᴀɴᴇɴᴛʟʏ*\nᴀʙʙ ʙᴏʟ ɴᴀ ᴍᴀᴅʜᴀʀᴄʜᴏᴅ.!!", parse_mode=ParseMode.HTML)
         log_message = (f"<b>{html.escape(chat.title)}:</b>\n"
-                       f"#MUTED\n"
                        f"<b>User:</b> {mention_html(user.id, user.first_name)}\n"
-                       f"Flooded the group.\nMuted until an admin unmutes")
+                       f"sᴘᴀᴍ ᴘᴇʟʀᴀ ᴛʜᴀ ɢʀᴜᴘ ᴍ.🥺 \nᴊᴀʙ ᴛᴀᴋ ᴋᴏɪ ᴀᴅᴍɪɴ ᴜɴᴍᴜᴛᴇ ɴɪ ᴋʀᴛᴀ ᴛᴀʙ ᴛᴀᴋ ᴍᴜᴛᴇ ʀᴀʜᴇɢᴀ..😁")
 
         return log_message
 
     except BadRequest:
-        msg.reply_text("I can't kick people here, give me permissions first! Until then, I'll disable antiflood.")
+        msg.reply_text("ʙʜᴀɪʏᴀᴀ ᴘᴇʀᴍɪssɪᴏɴs ᴛᴏ ᴅᴇᴅᴏ sᴀᴀʀɪ..🥺")
         sql.set_flood(chat.id, 0)
         log_message = ("<b>{chat.title}:</b>\n"
-                       "#INFO\n"
-                       "Don't have kick permissions, so automatically disabled antiflood.")
+                       "ɴɪ ʜ ʀɪɢʜᴛ.. 🥺 ᴀɴᴛɪғʟᴏᴏᴅ ᴅɪsᴀʙʟᴇᴅ ᴀᴜᴛᴏ ᴍ ᴛᴀᴋʟɪ..")
 
         return log_message
 
@@ -81,35 +79,33 @@ def set_flood(bot: Bot, update: Update, args: List[str]) -> str:
 
         if val == "off" or val == "no" or val == "0":
             sql.set_flood(chat.id, 0)
-            message.reply_text("Antiflood has been disabled{}.".format(chat_name), parse_mode=ParseMode.HTML)
+            message.reply_text("ᴀɴᴛɪғʟᴏᴏᴅ ᴅɪsᴀʙʟᴇᴅ {}.".format(chat_name), parse_mode=ParseMode.HTML)
 
         elif val.isdigit():
             amount = int(val)
             if amount <= 0:
                 sql.set_flood(chat.id, 0)
-                message.reply_text("Antiflood has been disabled{}.".format(chat_name), parse_mode=ParseMode.HTML)
+                message.reply_text("ᴀɴᴛɪғʟᴏᴏᴅ ᴅɪsᴀʙʟᴇᴅ {}.".format(chat_name), parse_mode=ParseMode.HTML)
                 log_message = (f"<b>{html.escape(chat.title)}:</b>\n"
-                               f"#SETFLOOD\n"
                                f"<b>Admin</b>: {mention_html(user.id, user.first_name)}\n"
-                               f"Disabled antiflood.")
+                               f"ᴀɴᴛɪғʟᴏᴏᴅ ᴅɪsᴀʙʟᴇᴅ.")
 
                 return log_message
             elif amount < 3:
-                message.reply_text("Antiflood has to be either 0 (disabled), or a number bigger than 3!")
+                message.reply_text("ᴍɪɴɪᴍᴜᴍ ᴀɴᴛɪғʟᴏᴏᴅ 3 ᴋʀᴅᴏ ᴠᴀɪʏᴀᴀ..")
                 return log_message
 
             else:
                 sql.set_flood(chat.id, amount)
-                message.reply_text("Antiflood has been updated and set to {}{}".format(amount, chat_name),
+                message.reply_text("ᴀɴᴛɪғʟᴏᴏᴅ ᴏɴ ʜᴏɢᴀʏᴀ ᴏʀ {}{} ᴘᴇ sᴇᴛ ʜ..".format(amount, chat_name),
                                    parse_mode=ParseMode.HTML)
                 log_message = (f"<b>{html.escape(chat.title)}:</b>\n"
-                               f"#SETFLOOD\n"
                                f"<b>Admin</b>: {mention_html(user.id, user.first_name)}\n"
                                f"Set antiflood to <code>{amount}</code>.")
 
                 return log_message
         else:
-            message.reply_text("Unrecognised argument - please use a number, 'off', or 'no'.")
+            message.reply_text("ᴏɴ ʏᴀ ᴏғғ ᴜsᴇ ᴋʀᴏ ᴀɴᴛɪғʟᴏᴏᴅ ᴋᴇ ᴀᴀɢᴇ..")
 
     return log_message
 
