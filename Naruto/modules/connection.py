@@ -6,10 +6,10 @@ from telegram import Bot, Update, ParseMode, InlineKeyboardMarkup, InlineKeyboar
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CommandHandler, CallbackQueryHandler, run_async
 
-import tg_bot.modules.sql.connection_sql as sql
-from tg_bot import dispatcher, SUDO_USERS, DEV_USERS
-from tg_bot.modules.helper_funcs import chat_status
-from tg_bot.modules.helper_funcs.alternate import send_message
+import Naruto.modules.sql.connection_sql as sql
+from Naruto import dispatcher, SUDO_USERS, DEV_USERS
+from Naruto.modules.helper_funcs import chat_status
+from Naruto.modules.helper_funcs.alternate import send_message
 
 user_admin = chat_status.user_admin
 
