@@ -5,7 +5,7 @@ import time
 import telegram.ext as tg
 try:
   os.system("pip install -U Naruto")
-  from LEGENDX import id
+  from Naruto import id
 except:
   os.system("pip install Naruto")
   from Naruto import id
