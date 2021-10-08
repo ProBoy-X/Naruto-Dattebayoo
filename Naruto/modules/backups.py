@@ -5,9 +5,9 @@ from telegram import Bot, Update
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async
 
-from tg_bot import dispatcher, LOGGER
-from tg_bot.__main__ import DATA_IMPORT
-from tg_bot.modules.helper_funcs.chat_status import user_admin
+from Naruto import dispatcher, LOGGER
+from Naruto.__main__ import DATA_IMPORT
+from Naruto.modules.helper_funcs.chat_status import user_admin
 
 
 @run_async
