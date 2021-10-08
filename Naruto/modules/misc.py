@@ -11,13 +11,13 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async, Filters
 from telegram.utils.helpers import mention_html
 
-from tg_bot import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, DEV_USERS, TIGER_USERS, WHITELIST_USERS
-from tg_bot.__main__ import STATS, USER_INFO, TOKEN
-from tg_bot.modules.disable import DisableAbleCommandHandler
-from tg_bot.modules.helper_funcs.chat_status import user_admin, sudo_plus, bot_admin, can_restrict
-from tg_bot.modules.helper_funcs.extraction import extract_user
-from tg_bot.modules.sql.safemode_sql import set_safemode, is_safemoded
-import tg_bot.modules.sql.users_sql as sql
+from Naruto import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, DEV_USERS, TIGER_USERS, WHITELIST_USERS
+from Naruto.__main__ import STATS, USER_INFO, TOKEN
+from Naruto.modules.disable import DisableAbleCommandHandler
+from Naruto.modules.helper_funcs.chat_status import user_admin, sudo_plus, bot_admin, can_restrict
+from Naruto.modules.helper_funcs.extraction import extract_user
+from Naruto.modules.sql.safemode_sql import set_safemode, is_safemoded
+import Naruto.modules.sql.users_sql as sql
 
 
 MARKDOWN_HELP = f"""
