@@ -5,8 +5,8 @@ from tswift import Song
 from telegram import Bot, Update, Message, Chat
 from telegram.ext import run_async
 
-from tg_bot import dispatcher
-from tg_bot.modules.disable import DisableAbleCommandHandler
+from Naruto import dispatcher
+from Naruto.modules.disable import DisableAbleCommandHandler
 
 
 @run_async
@@ -15,7 +15,7 @@ def lyrics(bot: Bot, update: Update, args):
     query = " ".join(args)
     song = ""
     if not query:
-        msg.reply_text("You haven't specified which song to look for!")
+        msg.reply_text("sᴏɴɢ ᴋᴀ ɴᴀᴍᴇ ᴛᴏ ʟɪᴋʜ ʟᴇ ᴠᴍʀᴏᴏ..")
         return
     else:
         song = Song.find_song(query)
@@ -23,9 +23,9 @@ def lyrics(bot: Bot, update: Update, args):
             if song.lyrics:
                 reply = song.format()
             else:
-                reply = "Couldn't find any lyrics for that song!"
+                reply = "sᴏʀʀʏ.. ʟʏʀɪᴄs ɴɪ ᴍɪʟᴀ☹️"
         else:
-            reply = "Song not found!"
+            reply = "sᴏɴɢ ɴɪ ᴍɪʟᴀ.☹️"
         if len(reply) > 4090:
             with open("lyrics.txt", 'w') as f:
                 f.write(f"{reply}\n\n\nOwO UwU OmO")
