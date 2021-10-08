@@ -8,9 +8,9 @@ from coffeehouse.exception import CoffeeHouseError as CFError
 from telegram import Message, Chat, User, Update, Bot
 from telegram.ext import CommandHandler, MessageHandler, Filters, run_async
 
-from tg_bot import dispatcher, AI_API_KEY, OWNER_ID
-import tg_bot.modules.sql.chatbot_sql as sql
-from tg_bot.modules.helper_funcs.filters import CustomFilters
+from Naruto import dispatcher, AI_API_KEY, OWNER_ID
+import Naruto.modules.sql.chatbot_sql as sql
+from Naruto.modules.helper_funcs.filters import CustomFilters
 
 
 CoffeeHouseAPI = API(AI_API_KEY)
@@ -28,9 +28,9 @@ def add_chat(bot: Bot, update: Update):
         ses_id = str(ses.id)
         expires = str(ses.expires)
         sql.set_ses(chat_id, ses_id, expires)
-        msg.reply_text("AI successfully enabled for this chat!")
+        msg.reply_text("ᴀʀᴛɪғɪᴄɪᴀʟ ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ sᴛᴀʀᴛ ᴋʀᴅɪʏᴀ..")
     else:
-        msg.reply_text("AI is already enabled for this chat!")
+        msg.reply_text("ᴀʀᴛɪғɪᴄɪᴀʟ ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ sᴛᴀʀᴛ ᴋʀᴅɪʏᴀ..")
         
         
 @run_async
@@ -39,15 +39,15 @@ def remove_chat(bot: Bot, update: Update):
     chat_id = update.effective_chat.id
     is_chat = sql.is_chat(chat_id)
     if not is_chat:
-        msg.reply_text("AI isn't enabled here in the first place!")
+        msg.reply_text("ᴀɪ ᴇɴᴀʙʟᴇ ɴᴀʜɪ ʜᴀɪ..")
     else:
         sql.rem_chat(chat_id)
-        msg.reply_text("AI disabled successfully!")
+        msg.reply_text("ᴀɪ ᴅɪsᴀʙʟᴇᴅ ᴋʀᴅɪʏᴀ..")
         
         
 def check_message(bot: Bot, message):
     reply_msg = message.reply_to_message
-    if message.text.lower() == "saitama":
+    if message.text.lower() == "naruto":
         return True
     if reply_msg:
         if reply_msg.from_user.id == bot.get_me().id:
