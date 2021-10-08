@@ -3,10 +3,10 @@ import random
 from telegram import Bot, Update, MessageEntity
 from telegram.ext import Filters, run_async
 
-from tg_bot import dispatcher
-from tg_bot.modules.disable import DisableAbleCommandHandler, DisableAbleRegexHandler, DisableAbleMessageHandler
-from tg_bot.modules.sql import afk_sql as sql
-from tg_bot.modules.users import get_user_id
+from Naruto import dispatcher
+from Naruto.modules.disable import DisableAbleCommandHandler, DisableAbleRegexHandler, DisableAbleMessageHandler
+from Naruto.modules.sql import afk_sql as sql
+from Naruto.modules.users import get_user_id
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
@@ -33,14 +33,7 @@ def no_longer_afk(bot: Bot, update: Update):
     res = sql.rm_afk(user.id)
     if res:
         options = [
-            '{} is here!',
-            '{} is back!',
-            '{} is now in the chat!',
-            '{} is awake!',
-            '{} is back online!',
-            '{} is finally here!',
-            'Welcome back!, {}',
-            'Where is {}?\nIn the chat!'
+            " {} ʙʜᴀɪʏᴀ ᴠᴀᴘɪs ᴀᴀɢᴀʏᴇᴇ..😁🥳 "
         ]
         chosen_option = random.choice(options)
         update.effective_message.reply_text(chosen_option.format(update.effective_user.first_name))
@@ -71,9 +64,9 @@ def reply_afk(bot: Bot, update: Update):
                 valid, reason = sql.check_afk_status(user_id)
                 if valid:
                     if not reason:
-                        res = "{} is AFK!".format(fst_name)
+                        res = "{} ᴄʜᴀʟʟᴇ ɢᴀʏᴇ ᴀғᴋ..🥺 ᴏʀ ʀᴇᴀsᴏɴ ʙʜɪ ɴɪ ʙᴀᴛᴀʏᴀ..🥺".format(fst_name)
                     else:
-                        res = "{} is AFK!\nReason:\n{}".format(fst_name, reason)
+                        res = "{} ᴄʜᴀʟʟᴇ ɢᴀʏᴇ ᴀғᴋ..🥺\n:\nʀᴇᴀsᴏɴ »» {}".format(fst_name, reason)
                     message.reply_text(res)
 
 
