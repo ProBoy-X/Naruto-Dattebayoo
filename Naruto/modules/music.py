@@ -6,9 +6,9 @@ from telegram.ext import CommandHandler, run_async, Filters
 import requests, logging
 from telegram.ext import Updater, MessageHandler, Filters, CommandHandler
 from telegram import Message, Chat, Update, Bot, MessageEntity
-from tg_bot import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS
+from Naruto import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
-from tg_bot.modules.helper_funcs.chat_status import user_admin
+from Naruto.modules.helper_funcs.chat_status import user_admin
 
 count = 0
 @run_async
@@ -23,18 +23,18 @@ def music(bot: Bot, update: Update, args):
 	if video_id.find('youtu.be') != -1:
 		index = video_id.rfind('/') + 1
 		video_id = video_id[index:][:11]
-		message.reply_text("Please wait...\ndownloading audio.")
+		message.reply_text("🦋 ᴡᴀɪᴛ ᴋʀᴏᴏ ʜᴏʀᴀ ʜᴀɪ ᴅᴏᴡɴʟᴏᴀᴅ.. 🦋")
 
 	elif video_id.find('youtube') != -1:
 		index = video_id.rfind('?v=') + 3
 		video_id = video_id[index:][:11]
-		message.reply_text("Please wait...\downloading audio.")
+		message.reply_text("🦋 ᴡᴀɪᴛ ᴋʀᴏᴏ ʜᴏʀᴀ ʜᴀɪ ᴅᴏᴡɴʟᴏᴀᴅ.. 🦋")
 
 	elif not video_id.find('youtube') != -1:
-		message.reply_text("Please provide me youtube link")
+		message.reply_text("ʏᴏᴜᴛᴜʙᴇ ʟɪɴᴋ ᴅᴇᴅᴏ ᴠᴀɪʏᴀᴀ..")
 
 	elif not video_id.find('youtu.be') != -1:
-		message.reply_text("Please provide me youtube link")
+		message.reply_text("ʏᴏᴜᴛᴜʙᴇ ʟɪɴᴋ ᴅᴇᴅᴏ ᴠᴀɪʏᴀᴀ..")
 		
 
         
@@ -59,7 +59,7 @@ def music(bot: Bot, update: Update, args):
 		if not json2_response['error']:
 			payload = json2_response['payload']
 
-			info = '*{0}* \nUploaded by @AnonymousD3061'.format(payload['fulltitle'])
+			info = '*{0}* \nᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ ʏᴏᴜʀ ᴏɴᴇ ᴀɴᴅ ᴏɴʟʏ @DatteBayooRoBot..♥️'.format(payload['fulltitle'])
 
 			try:
 				
@@ -67,7 +67,7 @@ def music(bot: Bot, update: Update, args):
 				count += 1
 				print("\033[1m\033[96m" + "Download count: " + str(count) + "\033[0m")
 			except:
-				bot.send_message(chat_id=chatId, text='Something went wrong with the download..!\nPlease Report there @AnonymousD3061')
+				bot.send_message(chat_id=chatId, text='ɴɪ ʜᴜᴀ ᴅᴏᴡɴʟᴏᴀᴅ.. ᴋᴜᴄʜ ᴘʀᴏʙʟᴇᴍ ʜᴏʀᴀ. @DattebayooSupport ᴍ ᴘᴜᴄʜ ʟᴏᴏ..')
 
 
 __help__ = """ Youtube audio Downloader
