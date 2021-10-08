@@ -7,8 +7,8 @@ from typing import List
 from telegram import Bot, Update, TelegramError
 from telegram.ext import CommandHandler, run_async
 
-from tg_bot import dispatcher
-from tg_bot.modules.helper_funcs.chat_status import dev_plus
+from Naruto import dispatcher
+from Naruto.modules.helper_funcs.chat_status import dev_plus
 
 
 @run_async
@@ -28,16 +28,16 @@ def leave(bot: Bot, update: Update, args: List[str]):
 @run_async
 @dev_plus
 def gitpull(bot: Bot, update: Update):
-    sent_msg = update.effective_message.reply_text("Pulling all changes from remote and then attempting to restart.")
+    sent_msg = update.effective_message.reply_text("ᴄʜᴀɴɢᴇs ʜᴜᴇ ʜ sᴀʏᴀᴅ..🤔 ʀᴇsᴛᴀʀᴛ ʜᴏʀᴀ ʜᴜ..")
     subprocess.Popen('git pull', stdout=subprocess.PIPE, shell=True)
 
-    sent_msg_text = sent_msg.text + "\n\nChanges pulled...I guess.. Restarting in "
+    sent_msg_text = sent_msg.text + "\n\n "ᴄʜᴀɴɢᴇs ʜᴜᴇ ʜ sᴀʏᴀᴅ..🤔 ʀᴇsᴛᴀʀᴛ ʜᴏʀᴀ ʜᴜ..
 
     for i in reversed(range(5)):
         sent_msg.edit_text(sent_msg_text + str(i + 1))
         sleep(1)
 
-    sent_msg.edit_text("Restarted.")
+    sent_msg.edit_text("ʀᴇsᴛᴀʀᴛᴇᴅ.!")
 
     os.system('restart.bat')
     os.execv('start.bat', sys.argv)
