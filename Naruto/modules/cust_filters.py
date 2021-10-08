@@ -8,19 +8,19 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
 
-from tg_bot import dispatcher, LOGGER
-from tg_bot.modules.disable import DisableAbleCommandHandler
-from tg_bot.modules.helper_funcs.chat_status import user_admin
-from tg_bot.modules.helper_funcs.extraction import extract_text
-from tg_bot.modules.helper_funcs.filters import CustomFilters
-from tg_bot.modules.helper_funcs.misc import build_keyboard
-from tg_bot.modules.helper_funcs.string_handling import split_quotes, button_markdown_parser
-from tg_bot.modules.sql import cust_filters_sql as sql
+from Naruto import dispatcher, LOGGER
+from Naruto.modules.disable import DisableAbleCommandHandler
+from Naruto.modules.helper_funcs.chat_status import user_admin
+from Naruto.modules.helper_funcs.extraction import extract_text
+from Naruto.modules.helper_funcs.filters import CustomFilters
+from Naruto.modules.helper_funcs.misc import build_keyboard
+from Naruto.modules.helper_funcs.string_handling import split_quotes, button_markdown_parser
+from Naruto.modules.sql import cust_filters_sql as sql
 
 from tg_bot.modules.connection import connected
 
 HANDLER_GROUP = 10
-BASIC_FILTER_STRING = "*Filters in this chat:*\n"
+BASIC_FILTER_STRING = "* ғɪʟᴛᴇʀs ɪɴ ᴛʜɪs ᴄʜᴀᴛ »» *\n"
 
 
 @run_async
@@ -32,7 +32,7 @@ def list_handlers(bot: Bot, update: Update):
     if not conn == False:
         chat_id = conn
         chat_name = dispatcher.bot.getChat(conn).title
-        filter_list = "*Filters in {}:*\n"
+        filter_list = "* ғɪʟᴛᴇʀs ɪɴ  {}:*\n"
     else:
         chat_id = update.effective_chat.id
         if chat.type == "private":
@@ -40,13 +40,13 @@ def list_handlers(bot: Bot, update: Update):
             filter_list = "*local filters:*\n"
         else:
             chat_name = chat.title
-            filter_list = "*Filters in {}*:\n".format(chat_name)
+            filter_list = "* ғɪʟᴛᴇʀs ɪɴ  {}*:\n".format(chat_name)
 
 
     all_handlers = sql.get_chat_triggers(chat_id)
 
     if not all_handlers:
-        update.effective_message.reply_text("No filters in *{}*!".format(chat_name), parse_mode=telegram.ParseMode.MARKDOWN)
+        update.effective_message.reply_text(" ɴᴏ ғɪʟᴛᴇʀs ɪɴ  *{}*!".format(chat_name), parse_mode=telegram.ParseMode.MARKDOWN)
         return
 
     for keyword in all_handlers:
