@@ -6,9 +6,9 @@ from telegram import Update, Bot
 from telegram.ext import CommandHandler, Filters
 from telegram.ext.dispatcher import run_async
 
-from tg_bot import dispatcher, SUDO_USERS, OWNER_USERNAME, OWNER_ID
-from tg_bot.modules.helper_funcs.extraction import extract_user
-from tg_bot.modules.helper_funcs.chat_status import bot_admin
+from Naruto import dispatcher, SUDO_USERS, OWNER_USERNAME, OWNER_ID
+from Naruto.modules.helper_funcs.extraction import extract_user
+from Naruto.modules.helper_funcs.chat_status import bot_admin
 
 
 @bot_admin
@@ -19,22 +19,22 @@ def sudopromote(bot: Bot, update: Update, args: List[str]):
     user_id = extract_user(message, args)
     
     if not user_id:
-        message.reply_text("You don't seem to be referring to a user.")
+        message.reply_text("ʙʜᴀɪʏᴀ ᴛᴀɢ ᴋʀʟᴏ ᴋɪsɪ ᴋᴏ..👀")
         return ""
         
     if int(user_id) == OWNER_ID:
-        message.reply_text("The specified user is my owner! No need add him to SUDO_USERS list!")
-        return ""
+        message.reply_text("ᴅᴇᴠᴛᴀ ʜ ᴠᴏ ᴍᴇʀᴇ ᴏʀ ᴛᴇʀᴇ ʙᴀᴀᴘ..🤣")
+       return ""
         
     if int(user_id) in SUDO_USERS:
-        message.reply_text("The user is already a sudo user.")
+        message.reply_text("ᴀʟʀᴇᴀᴅʏ sᴜᴅᴏ ᴜsᴇʀ ʜ ᴠᴏ ʙʜᴀɪɪ..")
         return ""
     
     with open("sudo_users.txt","a") as file:
         file.write(str(user_id) + "\n")
     
     SUDO_USERS.append(user_id)
-    message.reply_text("Succefully added to SUDO user list!")
+    message.reply_text("ᴋʀᴅɪʏᴀ ᴀᴅᴅ sᴜᴅᴏ ᴍ.. ᴀʙʙ 500$ ᴅᴇ @Its_JassManak ᴋᴏ..")
         
     return ""
 
@@ -45,15 +45,15 @@ def sudodemote(bot: Bot, update: Update, args: List[str]):
     user_id = extract_user(message, args)
     
     if not user_id:
-        message.reply_text("You don't seem to be referring to a user.")
+        message.reply_text("ʙʜᴀɪʏᴀ ᴛᴀɢ ᴋʀʟᴏ ᴋɪsɪ ᴋᴏ..👀")
         return ""
 
     if int(user_id) == OWNER_ID:
-        message.reply_text("The specified user is my owner! I won't remove him from SUDO_USERS list!")
+        message.reply_text("ᴅᴇᴠᴛᴀ ʜ ᴠᴏ ᴍᴇʀᴇ ᴏʀ ᴛᴇʀᴇ ʙᴀᴀᴘ..🤣")
         return ""
     
     if user_id not in SUDO_USERS:
-        message.reply_text("{} is not a sudo user".format(user_id))
+        message.reply_text("{} ʏᴇ ʙʜᴀɪ sᴜᴅᴏ ᴜsᴇʀ ɴɪ ʜᴀɪ..".format(user_id))
         return ""
 
     users = [line.rstrip('\n') for line in open("sudo_users.txt")]
@@ -64,7 +64,7 @@ def sudodemote(bot: Bot, update: Update, args: List[str]):
                 file.write(str(user) + "\n")
 
     SUDO_USERS.remove(user_id)
-    message.reply_text("Succefully removed from SUDO user list!")
+    message.reply_text("ʙʜᴋᴋ ʙsᴅᴋ.. ɴɪᴋᴀʟʟ ᴘʜʟɪ ғᴜʀsᴀᴛ ᴍ..")
     
     return ""
 
