@@ -5,10 +5,10 @@ from telegram import Bot, Update, ParseMode, MAX_MESSAGE_LENGTH
 from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import escape_markdown
 
-import tg_bot.modules.sql.userinfo_sql as sql
-from tg_bot import dispatcher, SUDO_USERS, DEV_USERS
-from tg_bot.modules.disable import DisableAbleCommandHandler
-from tg_bot.modules.helper_funcs.extraction import extract_user
+import Naruto.modules.sql.userinfo_sql as sql
+from Naruto import dispatcher, SUDO_USERS, DEV_USERS
+from Naruto.modules.disable import DisableAbleCommandHandler
+from Naruto.modules.helper_funcs.extraction import extract_user
 
 
 @run_async
