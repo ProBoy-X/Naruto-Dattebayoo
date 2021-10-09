@@ -6,10 +6,10 @@ from telegram.error import BadRequest
 from telegram.ext import Filters, run_async
 from telegram.utils.helpers import mention_html
 
-from tg_bot import dispatcher, LOGGER
-from tg_bot.modules.disable import DisableAbleCommandHandler
-from tg_bot.modules.helper_funcs.chat_status import user_admin, can_delete
-from tg_bot.modules.log_channel import loggable
+from Naruto import dispatcher, LOGGER
+from Naruto.modules.disable import DisableAbleCommandHandler
+from Naruto.modules.helper_funcs.chat_status import user_admin, can_delete
+from Naruto.modules.log_channel import loggable
 
 
 @run_async
@@ -30,7 +30,7 @@ def purge(bot: Bot, update: Update, args: List[str]) -> str:
 
             if args and args[0].isdigit():
                 new_del = message_id + int(args[0])
-                # No point deleting messages which haven't been written yet.
+                ᴋᴜᴄʜ ʙʜɪɪɪ..🙄
                 if new_del < delete_to:
                     delete_to = new_del
         else:
@@ -55,7 +55,7 @@ def purge(bot: Bot, update: Update, args: List[str]) -> str:
                                               "not have delete rights, or this might not be a supergroup.")
 
                 elif err.message != "Message to delete not found":
-                    LOGGER.exception("Error while purging chat messages.")
+                    LOGGER.exception("sᴏʀʀʏ ᴇʀʀᴏʀ ᴀᴀɢᴀʏᴀ ᴋᴜᴄʜ.😕")
 
         try:
             msg.delete()
@@ -65,14 +65,14 @@ def purge(bot: Bot, update: Update, args: List[str]) -> str:
                                           "not have delete rights, or this might not be a supergroup.")
 
             elif err.message != "Message to delete not found":
-                LOGGER.exception("Error while purging chat messages.")
+                LOGGER.exception("sᴏʀʀʏ ᴇʀʀᴏʀ ᴀᴀɢᴀʏᴀ ᴋᴜᴄʜ.😕")
 
         bot.send_message(chat.id, f"Purge <code>{delete_to - start_message_id}</code> messages.",
                          parse_mode=ParseMode.HTML)
         return (f"<b>{html.escape(chat.title)}:</b>\n"
                 f"#PURGE\n"
                 f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-                f"Purged <code>{delete_to - start_message_id}</code> messages.")
+                f" ᴋᴀʀᴅɪʏᴇ ᴅᴇʟᴇᴛᴇ <code>{delete_to - start_message_id}</code> ᴍᴇssᴀɢᴇs😁")
 
     return ""
 
@@ -92,7 +92,7 @@ def del_message(bot: Bot, update: Update) -> str:
                     f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
                     f"Message deleted.")
     else:
-        update.effective_message.reply_text("Whadya want to delete?")
+        update.effective_message.reply_text("ᴋʏᴀ ᴅᴇʟᴇᴛᴇ ᴋʀɴᴀ ᴄʜᴀʜᴛᴇ ʜᴏ ʙʜᴀɪʏᴀᴀ..")
 
     return ""
 
