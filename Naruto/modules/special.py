@@ -10,11 +10,11 @@ from telegram.ext import MessageHandler, Filters, CommandHandler
 from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import escape_markdown
 from html import escape
-from tg_bot.modules.helper_funcs.chat_status import is_user_ban_protected, bot_admin
+from Naruto.modules.helper_funcs.chat_status import is_user_ban_protected, bot_admin
 
-import tg_bot.modules.sql.users_sql as sql
-from tg_bot import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, LOGGER
-from tg_bot.modules.helper_funcs.filters import CustomFilters
+import Naruto.modules.sql.users_sql as sql
+from Naruto import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, LOGGER
+from Naruto.modules.helper_funcs.filters import CustomFilters
 
 USERS_GROUP = 4
 
