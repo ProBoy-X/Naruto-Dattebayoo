@@ -7,12 +7,12 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async
 from telegram.utils.helpers import mention_html
 
-from tg_bot import dispatcher, LOGGER, TIGER_USERS
-from tg_bot.modules.helper_funcs.chat_status import (bot_admin, user_admin, is_user_admin, can_restrict,
+from Naruto import dispatcher, LOGGER, TIGER_USERS
+from Naruto.modules.helper_funcs.chat_status import (bot_admin, user_admin, is_user_admin, can_restrict,
                                                      connection_status)
-from tg_bot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from tg_bot.modules.helper_funcs.string_handling import extract_time
-from tg_bot.modules.log_channel import loggable
+from Naruto.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from Naruto.modules.helper_funcs.string_handling import extract_time
+from Naruto.modules.log_channel import loggable
 
 
 def check_user(user_id: int, bot: Bot, chat: Chat) -> Optional[str]:
@@ -30,11 +30,11 @@ def check_user(user_id: int, bot: Bot, chat: Chat) -> Optional[str]:
             raise
 
     if user_id == bot.id:
-        reply = "I'm not gonna MUTE myself, How high are you?"
+        reply = "ᴊᴜᴛᴀᴀ ɴɪᴋᴀʟ ᴋᴇ ᴍᴀʀᴜɴɢᴀ.."
         return reply
 
     if is_user_admin(chat, user_id, member) or user_id in TIGER_USERS:
-        reply = "I really wish I could mute admins...Perhaps a Punch?"
+        reply = "ᴀᴅᴍɪɴ ʜ ᴠᴏ ʙsᴅᴋ.."
         return reply
 
     return None
@@ -69,12 +69,12 @@ def mute(bot: Bot, update: Update, args: List[str]) -> str:
 
     if member.can_send_messages is None or member.can_send_messages:
         bot.restrict_chat_member(chat.id, user_id, can_send_messages=False)
-        bot.sendMessage(chat.id, f"Muted <b>{html.escape(member.user.first_name)}</b> with no expiration date!",
+        bot.sendMessage(chat.id, f"<b>{html.escape(member.user.first_name)}</b>  sʜᴀɴᴛ ʀʜ ʟᴀᴡᴅᴇ.. ",
                         parse_mode=ParseMode.HTML)
         return log
 
     else:
-        message.reply_text("This user is already muted!")
+        message.reply_text("ᴀᴅʀᴇᴀᴅʏ ᴍᴜᴛᴇ ʜ ᴊʜᴀɴᴛ ᴋᴀ ʙᴀᴀʟ..")
 
     return ""
 
@@ -91,7 +91,7 @@ def unmute(bot: Bot, update: Update, args: List[str]) -> str:
 
     user_id = extract_user(message, args)
     if not user_id:
-        message.reply_text("You'll need to either give me a username to unmute, or reply to someone to be unmuted.")
+        message.reply_text("ᴜsᴇʀɴᴀᴍᴇ ᴅᴇᴅᴏ ᴠᴀɪʏᴀ ʏᴀ ᴜsᴇ ᴛᴀɢ ᴋʀʟᴏ.")
         return ""
 
     member = chat.get_member(int(user_id))
@@ -108,7 +108,7 @@ def unmute(bot: Bot, update: Update, args: List[str]) -> str:
                                      can_send_media_messages=True,
                                      can_send_other_messages=True,
                                      can_add_web_page_previews=True)
-            bot.sendMessage(chat.id, f"I shall allow <b>{html.escape(member.user.first_name)}</b> to text!",
+            bot.sendMessage(chat.id, f" <b>{html.escape(member.user.first_name)}</b> ᴀʙʙ ʙᴏʟ sᴀᴋᴛᴇ ᴠᴏ ʙʜᴀɪʏᴀᴀ..",
                             parse_mode=ParseMode.HTML)
             return (f"<b>{html.escape(chat.title)}:</b>\n"
                     f"#UNMUTE\n"
