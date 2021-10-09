@@ -1,8 +1,8 @@
-ᴘʀɪᴠᴀᴛᴇ ᴘʀᴏᴊᴇᴄᴛ ᴏꜰ [ᴊᴀꜱꜱ ᴍᴀɴᴀᴋ](https://t.me/Its_JassManak)
+ᴘʀɪᴠᴀᴛᴇ ᴘʀᴏᴊᴇᴄᴛ ᴏꜰ [ᴊᴀss ᴍᴀɴᴀᴋ](https://t.me/Its_JassManak)
 
 
 
 
-ᴠɪsɪᴛ ᴍᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ :- [Jass Manak](https://t.me/Its_JassManak)
+ᴠɪsɪᴛ ᴍᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ :- [ᴊᴀss ᴍᴀɴᴀᴋ](https://t.me/Its_JassManak)
 
-ᴠɪsɪᴛ ɴᴀʀᴜᴛᴏ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ :- [Naruto](https://t.me/DatteBayooRoBot)
+ᴠɪsɪᴛ ɴᴀʀᴜᴛᴏ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ :- [ɴᴀʀᴜᴛᴏ](https://t.me/DatteBayooRoBot)
