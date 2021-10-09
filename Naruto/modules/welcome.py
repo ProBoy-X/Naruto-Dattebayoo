@@ -11,14 +11,14 @@ from telegram.error import BadRequest
 from telegram.ext import MessageHandler, Filters, CommandHandler, run_async, CallbackQueryHandler, JobQueue
 from telegram.utils.helpers import mention_markdown, mention_html, escape_markdown
 
-import tg_bot.modules.sql.welcome_sql as sql
-from tg_bot import dispatcher, OWNER_ID, DEV_USERS, SUDO_USERS, SUPPORT_USERS, TIGER_USERS, WHITELIST_USERS, LOGGER
-from tg_bot.modules.helper_funcs.chat_status import user_admin, is_user_ban_protected
-from tg_bot.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from tg_bot.modules.helper_funcs.msg_types import get_welcome_type
-from tg_bot.modules.helper_funcs.string_handling import (markdown_parser,
+import Naruto.modules.sql.welcome_sql as sql
+from Naruto import dispatcher, OWNER_ID, DEV_USERS, SUDO_USERS, SUPPORT_USERS, TIGER_USERS, WHITELIST_USERS, LOGGER
+from Naruto.modules.helper_funcs.chat_status import user_admin, is_user_ban_protected
+from Naruto.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from Naruto.modules.helper_funcs.msg_types import get_welcome_type
+from Naruto.modules.helper_funcs.string_handling import (markdown_parser,
                                                          escape_invalid_curly_brackets)
-from tg_bot.modules.log_channel import loggable
+from Naruto.modules.log_channel import loggable
 
 VALID_WELCOME_FORMATTERS = ['first', 'last', 'fullname', 'username', 'id', 'count', 'chatname', 'mention']
 
@@ -100,27 +100,27 @@ def new_member(bot: Bot, update: Update, job_queue: JobQueue):
 
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
-                update.effective_message.reply_text("YEAH I SEE PRO PLAYER IS HERE!")
+                update.effective_message.reply_text("ᴀʀᴇᴇ ʙʜᴀɪʏᴀᴀ ᴀᴀɢʏᴇ ᴀᴀᴘ.. ᴋᴀɪsᴇ ʜᴏ?😁")
 
             # Welcome Sudos
             elif new_mem.id in SUDO_USERS:
-                update.effective_message.reply_text("Huh! A Powered just joined! Stay Alert!")
+                update.effective_message.reply_text("ᴀʀᴇᴇ ʙʜᴀɪʏᴀᴀ ᴀᴀɢʏᴇ ᴀᴀᴘ.. ᴋᴀɪsᴇ ʜᴏ?😁")
 
             # Welcome Support
             elif new_mem.id in SUPPORT_USERS:
-                update.effective_message.reply_text("Hey! A support user joined!")
+                update.effective_message.reply_text("ᴀʀᴇᴇ ʙʜᴀɪʏᴀᴀ ᴀᴀɢʏᴇ ᴀᴀᴘ.. ᴋᴀɪsᴇ ʜᴏ?😁")
 
             # Welcome Whitelisted
             elif new_mem.id in TIGER_USERS:
-                update.effective_message.reply_text("Oof! A Tiger disaster just joined!")
+                update.effective_message.reply_text("ᴀʀᴇᴇ ʙʜᴀɪʏᴀᴀ ᴀᴀɢʏᴇ ᴀᴀᴘ.. ᴋᴀɪsᴇ ʜᴏ?😁")
 
             # Welcome Tigers
             elif new_mem.id in WHITELIST_USERS:
-                update.effective_message.reply_text("Oof! A Wolf disaster just joined!")
+                update.effective_message.reply_text("ᴀʀᴇᴇ ʙʜᴀɪʏᴀᴀ ᴀᴀɢʏᴇ ᴀᴀᴘ.. ᴋᴀɪsᴇ ʜᴏ?😁")
 
             # Welcome yourself
             elif new_mem.id == bot.id:
-                update.effective_message.reply_text("hello 😎 thanks for using me make sure you promote me then i can safe your group for spammers 🥰🥰🥰")
+                update.effective_message.reply_text("ᴀʀᴇᴇ ᴀʀᴇᴇ ʙʜᴀɪʏᴀᴀ ᴀᴘɴᴇ ᴍᴜᴊʜᴇ ᴀᴅᴅ ᴋɪʏᴀ ᴜsᴋᴇ ʟɪʏᴇ sʜᴜᴋʀɪʏᴀ..❤️ ᴀʙʙ ᴀᴅᴍɪɴ ʙᴀɴᴀᴏ ᴍᴜᴊʜᴇ ᴏʀ ᴅᴇᴋʜᴛᴇ ᴊᴀᴏᴏ..😁")
 
             else:
                 # If welcome message is media, send with appropriate function
