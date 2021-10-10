@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import func, distinct, Column, String, UnicodeText, Integer
 
-from tg_bot.modules.sql import SESSION, BASE
+from Naruto.modules.sql import SESSION, BASE
 
 
 class StickersFilters(BASE):
