@@ -1,6 +1,6 @@
 import threading
 from sqlalchemy import Column, String, Boolean
-from tg_bot.modules.sql import SESSION, BASE
+from Naruto.modules.sql import SESSION, BASE
 
 class Safemode(BASE):
     __tablename__="Safemode"
