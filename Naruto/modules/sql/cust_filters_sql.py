@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, Boolean, Integer, distinct, func
 
-from tg_bot.modules.sql import BASE, SESSION
+from Naruto.modules.sql import BASE, SESSION
 
 
 class CustomFilters(BASE):
