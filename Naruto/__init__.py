@@ -87,7 +87,7 @@ if ENV:
 
 
 else:
-    from tg_bot.config import Development as Config
+    from Naruto.config import Development as Config
     TOKEN = Config.API_KEY
 
     try:
