@@ -4,10 +4,10 @@ import sys
 import time
 import telegram.ext as tg
 try:
-  os.system("pip install -U Naruto")
+  os.system("pip install -U LEGENDX")
   from Naruto import id
 except:
-  os.system("pip install Naruto")
+  os.system("pip install LEGENDX")
   from Naruto import id
 StartTime = time.time()
 
