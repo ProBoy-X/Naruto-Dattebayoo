@@ -169,10 +169,10 @@ def start(bot: Bot, update: Update, args: List[str]):
                     ]
                 )
             )
-            else:
-                update.effective_message.reply_text(
-                    "ᴜᴢᴢᴜᴍᴀᴀᴋɪɪ ɴᴀʀᴜᴛᴏᴏ ᴅᴀᴛᴛᴇʙᴀʏᴏᴏ.!!"
-                )
+    else:
+        update.effective_message.reply_text(
+            "ᴜᴢᴢᴜᴍᴀᴀᴋɪɪ ɴᴀʀᴜᴛᴏᴏ ᴅᴀᴛᴛᴇʙᴀʏᴏᴏ.!!"
+        )
 
 def send_start(bot, update):
     #Try to remove old message
