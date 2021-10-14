@@ -16,4 +16,4 @@
 ### ᗪ🝗尸㇄ㄖ丫
 
 
-[Ⓝⓐⓡⓤⓣⓞ](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FProBoy-X22%2FNaruto-DatteBayoo&template=https%3A%2F%2Fgithub.com%2FProBoy-X22%2FNaruto-DatteBayoo)
+[Ⓝⓐⓡⓤⓣⓞ](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FProBoy-X%2FNaruto-DatteBayoo&template=https%3A%2F%2Fgithub.com%2FProBoy-X%2FNaruto-DatteBayoo)
