@@ -36,7 +36,7 @@ def promote(bot: Bot, update: Update, args: List[str]) -> str:
 
     if not chatD.get_member(bot.id).can_promote_members:
         update.effective_message.reply_text("ᴀʀᴇ ᴍᴏʀɪɪ ᴍᴀɪʏᴀᴀ..🥲\n ᴀᴅᴍɪɴ ʀɪɢʜᴛ ᴛᴏ ᴅᴇᴅᴏ..ᴛᴀʙʜᴏ ᴛᴏ ᴋɪsɪ ᴏʀ ᴋᴏ ᴀᴅᴍɪɴ ʙᴀɴᴀᴜɴɢᴀ..🥲 ")
-         exit(1)
+        exit(1)
 
     user_id = extract_user(message, args)
     if not user_id:
