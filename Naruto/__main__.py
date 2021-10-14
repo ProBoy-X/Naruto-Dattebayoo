@@ -52,7 +52,7 @@ HELP_STRINGS = """
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nᴄᴏᴍᴍᴀɴᴅs ᴋᴇ ʟɪʏᴇ . / ᴏʀ ! ᴜsᴇ ᴋʀ sᴀᴋᴛᴇ ʜᴏ..\n")
 
-TECHNO_IMG = "https://te.legra.ph/file/d04e902ddb1ad6d1267a2.gif"
+TECHNO_IMG = "https://te.legra.ph/file/d04e902ddb1ad6d1267a2.mp4"
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
