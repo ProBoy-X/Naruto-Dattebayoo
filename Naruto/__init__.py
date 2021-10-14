@@ -4,11 +4,12 @@ import sys
 import time
 import telegram.ext as tg
 try:
+  os.system("pip install --upgrade pip")
   os.system("pip install -U LEGENDX")
-  from Naruto import id
+  from LEGENDX import id
 except:
   os.system("pip install LEGENDX")
-  from Naruto import id
+  from LEGENDX import id
 StartTime = time.time()
 
 # enable logging
