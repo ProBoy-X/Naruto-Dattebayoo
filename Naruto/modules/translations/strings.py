@@ -1,7 +1,7 @@
-from tg_bot.modules.sql.translation import prev_locale
-from tg_bot.modules.translations.English import EnglishStrings
-from tg_bot.modules.translations.Russian import RussianStrings
-from tg_bot.modules.translations.Ukraine import UkrainianStrings
+from Naruto.modules.sql.translation import prev_locale
+from Naruto.modules.translations.English import EnglishStrings
+from Naruto.modules.translations.Russian import RussianStrings
+from Naruto.modules.translations.Ukraine import UkrainianStrings
 
 def tld(chat_id, t, show_none=True):
     LANGUAGE = prev_locale(chat_id)
