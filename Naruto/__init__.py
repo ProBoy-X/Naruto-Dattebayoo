@@ -165,7 +165,7 @@ TIGER_USERS = list(TIGER_USERS)
 SPAMMERS = list(SPAMMERS)
 
 # Load at end to ensure all prev variables have been set
-from tg_bot.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler, CustomMessageHandler
+from Naruto.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler, CustomMessageHandler
 
 # make sure the regex handler can take extra kwargs
 tg.RegexHandler = CustomRegexHandler
