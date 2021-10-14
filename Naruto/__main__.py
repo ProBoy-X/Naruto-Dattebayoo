@@ -153,7 +153,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                                                                                  ]]))
 
     else:
-        update.effective_message.reply_text(" ᴜᴢᴢᴜᴍᴀᴀᴋɪɪ ɴᴀʀᴜᴛᴏᴏ ᴅᴀᴛᴛᴇʙᴀʏᴏᴏ.![!](https://te.legra.ph/file/835ef41560d83ef2c9c59.png) ")
+        update.effective_message.reply_text("ᴜᴢᴢᴜᴍᴀᴀᴋɪɪ ɴᴀʀᴜᴛᴏᴏ ᴅᴀᴛᴛᴇʙᴀʏᴏᴏ.!!")
 
 
 def send_start(bot, update):
