@@ -24,7 +24,7 @@ def sudopromote(bot: Bot, update: Update, args: List[str]):
         
     if int(user_id) == OWNER_ID:
         message.reply_text("ᴅᴇᴠᴛᴀ ʜ ᴠᴏ ᴍᴇʀᴇ ᴏʀ ᴛᴇʀᴇ ʙᴀᴀᴘ..🤣")
-       return ""
+        return ""
         
     if int(user_id) in SUDO_USERS:
         message.reply_text("ᴀʟʀᴇᴀᴅʏ sᴜᴅᴏ ᴜsᴇʀ ʜ ᴠᴏ ʙʜᴀɪɪ..")
