@@ -30,7 +30,6 @@ def purge(bot: Bot, update: Update, args: List[str]) -> str:
 
             if args and args[0].isdigit():
                 new_del = message_id + int(args[0])
-                ᴋᴜᴄʜ ʙʜɪɪɪ..🙄
                 if new_del < delete_to:
                     delete_to = new_del
         else:
