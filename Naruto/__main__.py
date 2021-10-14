@@ -19,7 +19,7 @@ from Naruto import dispatcher, updater, TOKEN, WEBHOOK, OWNER_ID, CERT_PATH, POR
 # NOTE: Module order is not guaranteed, specify that in the config file!
 from Naruto.modules import ALL_MODULES
 from Naruto import dispatcher
-from LegendX.modules.disable import DisableAbleCommandHandler
+from LEGENDX.modules.disable import DisableAbleCommandHandler
 from Naruto.modules.helper_funcs.chat_status import is_user_admin
 from Naruto.modules.helper_funcs.misc import paginate_modules
 
