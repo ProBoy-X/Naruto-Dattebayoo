@@ -31,7 +31,7 @@ def gitpull(bot: Bot, update: Update):
     sent_msg = update.effective_message.reply_text("ᴄʜᴀɴɢᴇs ʜᴜᴇ ʜ sᴀʏᴀᴅ..🤔 ʀᴇsᴛᴀʀᴛ ʜᴏʀᴀ ʜᴜ..")
     subprocess.Popen('git pull', stdout=subprocess.PIPE, shell=True)
 
-    sent_msg_text = sent_msg.text + "\n\n "ᴄʜᴀɴɢᴇs ʜᴜᴇ ʜ sᴀʏᴀᴅ..🤔 ʀᴇsᴛᴀʀᴛ ʜᴏʀᴀ ʜᴜ..
+    sent_msg_text = sent_msg.text + "\n\n "ᴄʜᴀɴɢᴇs ʜᴜᴇ ʜ sᴀʏᴀᴅ..🤔 ʀᴇsᴛᴀʀᴛ ʜᴏʀᴀ ʜᴜ.."
 
     for i in reversed(range(5)):
         sent_msg.edit_text(sent_msg_text + str(i + 1))
