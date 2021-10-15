@@ -30,29 +30,19 @@ PM_START_TEXT = """
 
 ᴀɢᴀʀ ғᴇᴀᴛᴜʀᴇs ᴅᴇᴋʜɴᴇ ʜ ᴛᴏ /help ᴄᴏᴍᴍᴀɴᴅ ᴜsᴇ ᴋʀᴋᴇ ᴅᴇᴋʜ ʟᴏ..😁\n
 
-ʙɪɴᴀ ᴘᴇʀᴍɪssɪᴏɴ ᴋᴇ ᴀᴅᴅ ᴍᴛ ᴋʀɴᴀ ᴀᴘɴᴇ ɢʀᴏᴜᴘ ᴍ ᴏᴛʜᴇʀᴡɪsᴇ ɢʀᴏᴜᴘ ᴜᴅᴀ ᴅᴜɴɢᴀ..🤧
+ʙɪɴᴀ ᴘᴇʀᴍɪssɪᴏɴ ᴋᴇ ᴀᴅᴅ ᴍᴛ ᴋʀɴᴀ ᴀᴘɴᴇ ɢʀᴏᴜᴘ ᴍ ᴏᴛʜᴇʀᴡɪsᴇ ɢʀᴏᴜᴘ ᴜᴅᴀ ᴅᴜɴɢᴀ..[🤧](https://te.legra.ph/file/31eb96e606a52078e7406.mp4)
 
 """
 
 HELP_STRINGS = """
 
- ʜᴇʟʟᴏ ᴠᴀɪʏᴀᴀ👋🏻 
+ ʜɪ ʙʜᴀɪʏᴀ [👋](🏻https://te.legra.ph/file/31eb96e606a52078e7406.mp4)
 
-ᴄᴏᴍᴍᴀɴᴅsss.. :
+ᴄᴏᴍᴍᴀɴᴅs ʙʜᴛ ʜᴀɪ ᴍᴜᴊʜᴍᴇ ᴅᴇᴋʜʟᴏ sᴜᴋᴏᴏɴ sᴇᴇ..😁
 
- - /start: ʙᴏᴛ sᴛᴀʀᴛ ʜᴏ ᴊᴀʏᴇɢᴀ.😁
- - /help: ᴘᴍ ᴍᴀɪ sᴀʀᴇ ᴀᴠᴀɪʟᴀʙʟᴇs ᴄᴏᴍᴍᴀɴᴅ ᴅɪᴋʜᴀ ᴅᴇɢᴀ..
- - /help <module name>: ᴘᴀʀᴛɪᴄᴜʟᴀʀ ᴍᴏᴅᴜʟᴇ ᴋᴀ ᴄᴏᴍᴍᴀɴᴅ ʙᴀᴛᴀʏᴇɢᴀ ᴘᴍ ᴍ..
- - /settings:
-   - ɪɴ ᴘᴍ : ᴡɪʟʟ sᴇɴᴅ ʏᴏᴜ ʏᴏᴜʀ sᴇᴛᴛɪɴɢs ғᴏʀ ᴀʟʟ sᴜᴘᴘᴏʀᴛᴇᴅ ᴍᴏᴅᴜʟᴇs.
-   - ɪɴ ᴀ ɢʀᴏᴜᴘ : ᴡɪʟʟ ʀᴇᴅɪʀᴇᴄᴛ ʏᴏᴜ ᴛᴏ ᴘᴍ, ᴡɪᴛʜ ᴀʟʟ ᴛʜᴀᴛ ᴄʜᴀᴛ's sᴇᴛᴛɪɴɢs.
-
-
-{}
-And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nᴄᴏᴍᴍᴀɴᴅs ᴋᴇ ʟɪʏᴇ . / ᴏʀ ! ᴜsᴇ ᴋʀ sᴀᴋᴛᴇ ʜᴏ..\n")
 
-TECHNO_IMG = "https://telegra.ph/file/edecdc2eeeaaf567221b3.mp4"
+TECHNO_IMG = "https://te.legra.ph/file/31eb96e606a52078e7406.mp4"
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -171,7 +161,7 @@ def start(bot: Bot, update: Update, args: List[str]):
             )
     else:
         update.effective_message.reply_text(
-            "ᴜᴢᴢᴜᴍᴀᴀᴋɪɪ ɴᴀʀᴜᴛᴏᴏ ᴅᴀᴛᴛᴇʙᴀʏᴏᴏ.!!"
+            "ʜᴇʏʏ!! ɪ ᴀᴍ ɴᴀʀᴜᴛᴏ ᴜᴢᴜᴍᴀᴋɪɪ!! ᴀɴᴅ ɪ ᴡᴀᴀɴᴀ ʙᴇ ʜᴏᴋᴀɢᴇ ᴏɴᴇ ᴅᴀʏ.!!😎"
         )
 
 def send_start(bot, update):
@@ -270,16 +260,16 @@ def get_help(bot: Bot, update: Update):
     # ONLY send help in PM
     if chat.type != chat.PRIVATE:
 
-        update.effective_message.reply_text("Contact me in Direct Message to get the help.",
+        update.effective_message.reply_text("ᴅᴍ ᴀᴀᴊᴀ ʙʀᴏ..",
                                             reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="HELP",
+                                                [[InlineKeyboardButton(text="ᴀᴀᴊᴀ ᴅᴍ😉",
                                                                        url="t.me/{}?start=help".format(
                                                                            bot.username))]]))
         return
 
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
         module = args[1].lower()
-        text = "Here is the available help for the *{}* module:\n".format(HELPABLE[module].__mod_name__) \
+        text = "ʏᴇ ʟᴏ ʙʜᴀɪʏᴀ *{}* ᴍᴏᴅᴜʟᴇ ᴋᴀ ʜᴇʟᴘ ᴊᴏ ᴀᴘɴᴇ ᴍᴀɢᴀ ᴛʜᴀ..\n".format(HELPABLE[module].__mod_name__) \
                + HELPABLE[module].__help__
         send_help(chat.id, text, InlineKeyboardMarkup([[InlineKeyboardButton(text="BACK", callback_data="help_back")]]))
 
