@@ -161,7 +161,7 @@ def start(bot: Bot, update: Update, args: List[str]):
             )
     else:
         update.effective_message.reply_text(
-            "ʜᴇʏʏ!! ɪ ᴀᴍ ɴᴀʀᴜᴛᴏ ᴜᴢᴜᴍᴀᴋɪɪ!! ᴀɴᴅ ɪ ᴡᴀᴀɴᴀ ʙᴇ ʜᴏᴋᴀɢᴇ ᴏɴᴇ ᴅᴀʏ.!!😎"
+            " ɦǟռʝɨɨ ɮօʟɨʏɛɛ ӄʏǟ ӄǟǟʍ ɦǟɨ !! ʐɨռɖǟǟ ɦʊʊ ʄɨʟɦǟǟʟ օʀ ɮɨʟӄʊʟ օք ɦʊ.. "
         )
 
 def send_start(bot, update):
@@ -212,7 +212,7 @@ def help_button(bot: Bot, update: Update):
     try:
         if mod_match:
             module = mod_match.group(1)
-            text = "Here is the help for the *{}* module:\n".format(HELPABLE[module].__mod_name__) \
+            text = "ʏᴇ ʟᴏ ʙʜᴀɪʏᴀ *{}* ᴍᴏᴅᴜʟᴇ ᴋᴀ ʜᴇʟᴘ ᴊᴏ ᴀᴘɴᴇ ᴍᴀɢᴀ ᴛʜᴀ..\n".format(HELPABLE[module].__mod_name__) \
                    + HELPABLE[module].__help__
             query.message.reply_text(text=text,
                                      parse_mode=ParseMode.MARKDOWN,
