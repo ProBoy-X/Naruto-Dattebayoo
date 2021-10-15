@@ -42,7 +42,7 @@ HELP_STRINGS = """
 
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nᴄᴏᴍᴍᴀɴᴅs ᴋᴇ ʟɪʏᴇ . / ᴏʀ ! ᴜsᴇ ᴋʀ sᴀᴋᴛᴇ ʜᴏ..\n")
 
-TECHNO_IMG = "https://te.legra.ph/file/31eb96e606a52078e7406.mp4"
+TECHNO_IMG = ""
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
